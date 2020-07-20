@@ -311,7 +311,7 @@ public class EvaluationService {
 	 * 
 	 * --Letter Values-- Letter Value A, E, I, O, U, L, N, R, S, T = 1; D, G = 2; B,
 	 * C, M, P = 3; F, H, V, W, Y = 4; K = 5; J, X = 8; Q, Z = 10; Examples
-	 * "cabbage" should be scored as worth 14 points:
+	 * "Cabbage" should be scored as worth 14 points:
 	 * 
 	 * 3 points for C, 1 point for A, twice 3 points for B, twice 2 points for G, 1
 	 * point for E And to total:
@@ -348,13 +348,16 @@ public class EvaluationService {
 	 * 
 	 * For example, the inputs
 	 * 
-	 * +1 (613)-995-0253 613-995-0253 1 613 995 0253 613.995.0253 should all produce
-	 * the output
+	 * +1 (613)-995-0253, 613-995-0253, 1 613 995 0253, 613.995.0253 should all produce
+	 * the output:
 	 * 
 	 * 6139950253
 	 * 
 	 * Note: As this exercise only deals with telephone numbers used in
 	 * NANP-countries, only 1 is considered a valid country code.
+	 * 
+	 * Note: If telephone number is invalid (non-numerical character, more than 11 digits
+	 * or an invalid country code), throw an 'IllegalArgumentException.class'.
 	 */
 	public String cleanPhoneNumber(String string) {
 		return null;
@@ -365,8 +368,8 @@ public class EvaluationService {
 	 * 
 	 * Given a phrase, count the occurrences of each word in that phrase.
 	 * 
-	 * For example for the input "olly olly in come free" olly: 2 in: 1 come: 1
-	 * free: 1
+	 * For example for the input "olly olly in come free" should return a map with key-value pairs of;
+	 *  olly: 2, in: 1, come: 1, free: 1.
 	 */
 	public Map<String, Integer> wordCount(String string) {
 		// TODO Write an implementation for this method declaration
@@ -466,7 +469,7 @@ public class EvaluationService {
 		return null;
 	}
 	
-	/*
+	/**
 	 * 22. Easy Guessing Game
 	 * 
 	 * Create a program to generate a number between the given range:

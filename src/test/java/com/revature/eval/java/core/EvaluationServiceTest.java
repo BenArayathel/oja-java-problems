@@ -27,12 +27,12 @@ public class EvaluationServiceTest {
 	 ******************************************************************/
 	@Test
 	public void testSpeedConverter1() {
-		assertEquals(1, EvaluationService.SpeedConverter.toMilesPerHour(1.5));
+		assertEquals(1, EvaluationService.SpeedConverter.toMilesPerHour(1.61));
 	}
 	
 	@Test
 	public void testSpeedConverter2() {
-		assertEquals(6, EvaluationService.SpeedConverter.toMilesPerHour(10.25));
+		assertEquals(6, EvaluationService.SpeedConverter.toMilesPerHour(9.65));
 	}
 	
 	@Test
@@ -45,12 +45,12 @@ public class EvaluationServiceTest {
 	 ******************************************************************/
 	@Test
 	public void testPrintConversion1() {
-		assertEquals("1.5 km/h = 1 mi/h", EvaluationService.SpeedConverter.printConversion(1.5));
+		assertEquals("1.61 km/h = 1 mi/h", EvaluationService.SpeedConverter.printConversion(1.61));
 	}
 	
 	@Test
 	public void testPrintConversion2() {
-		assertEquals("10.25 km/h = 6 mi/h", EvaluationService.SpeedConverter.printConversion(10.25));
+		assertEquals("9.65 km/h = 6 mi/h", EvaluationService.SpeedConverter.printConversion(9.65));
 	}
 	
 	@Test
@@ -156,8 +156,13 @@ public class EvaluationServiceTest {
 		assertEquals("THREE", evaluationService.printNumberInWord(3));
 	}
 	
+	@Test 
+	public void testNumberInWorld2() {
+		assertEquals("SEVEN", evaluationService.printNumberInWord(7));
+	}
+	
 	@Test
-	public void testNumberInWord2() {
+	public void testNumberInWord3() {
 		assertEquals("OTHER", evaluationService.printNumberInWord(13));
 	}
 	
@@ -177,6 +182,11 @@ public class EvaluationServiceTest {
 	@Test
 	public void testGreatestCommonDivisor3() {
 		assertEquals(-1, evaluationService.getGreatestCommonDivisor(9, 18));
+	}
+	
+	@Test 
+	public void testGreatestCommonDivisor4() {
+		assertEquals(8, evaluationService.getGreatestCommonDivisor(512, 344));
 	}
 	
 	/*******************************************************************
